@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<meta charset="utf-8"/>
+		<title>Dossiê Fábrica de Noobs</title>
+	</head>
+	
+	<body style='background-color: #36393f;'>
+		<script>
+			srcimgs = [
+				{type: "geral", imgs: "g1 g2 g3 g4"},
+				{type: "jaca", imgs: "jaca1 jaca2 jaca3"},
+				{type: "luiz", imgs: "luiz0 luiz1 luiz3 luiz4 luiz5 luiz6 luiz7"},
+				{type: "raid", imgs: "raid1 raid2 raid3 raid4 raid5 raid6 raid7 raid8 raid9 raid10 raid11 raid12"}
+			];
+			window.onload = (function(){
+				src = document.getElementsByClassName("_src")[0];
+				genimgs();
+			});
+			
+			function genimgs(){
+				for (i = 0; i < srcimgs.length; i++){
+					images = srcimgs[i].imgs.split(" ");
+					
+					for (ci = 0; ci < images.length; ci++){
+						src.innerHTML += "<img title='sobre: " + srcimgs[i].type + "'style='box-shadow: 0 0 6px 0px #000000a3; margin: 15;' src='src/" + images[ci] + ".png'/>";
+					};
+				};
+			};
+		</script>
+		<center>
+			<img style='width: 100px; border-radius: 50px; box-shadow: 0 0 5px 1px #000000a3;' src="src/fdn.png"/>
+			<h1 style="color: white; font-family: sans-serif; background-color: #00000042; padding: 5px;">Fábrica de Noobs in a nutshell</h1>
+			<p style="color: white; font-family: sans-serif;">Sente-se... Pegue uma pipoca.</p>
+			<div class='_src'></div>
+			<img src="src/pray.png"/>
+		</center>
+	</body>
+</html>
